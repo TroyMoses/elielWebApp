@@ -1,7 +1,7 @@
 
-# Ozoh Engineering Company Website
+# Eliel Web App
 
-Welcome to the Ozoh Engineering Company Website! This is a Next.js website for a fictional company that specializes in providing all engineering services. The website is designed to showcase the company's offerings and allow users to get in touch for inquiries and feedback.
+Welcome to the Eliel Web App! An archive for adding, updating and removing archive topics
 
 ## Table of Contents
 
@@ -27,13 +27,13 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/TroyMoses/constrCompany.git
+   git clone https://github.com/TroyMoses/elielWebApp.git
    ```
 
 2. Change into the project directory:
 
    ```bash
-   cd constrCompany
+   cd elielWebApp
    ```
 
 3. Install the dependencies:
@@ -54,15 +54,13 @@ The website will be accessible at [http://localhost:3000](http://localhost:3000)
 
 ## Features
 
-- Home page showcasing the company's offerings
-- About page with information about the company
-- Services page listing different loan services
-- Contact page for users to get in touch and provide feedback
+- Home page showcasing the archived topics
+- Signup, Login pages for users to register and login to be able to use the app
 - Database integration for storing user data
 
 ## Contributing
 
-We welcome contributions from the community! If you want to contribute to the Helping Bank project, please follow these steps:
+We welcome contributions from the community! If you want to contribute to the web app, please follow these steps:
 
 1. Fork the repository on GitHub.
 
