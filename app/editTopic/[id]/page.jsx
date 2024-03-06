@@ -1,4 +1,5 @@
 import EditTopicForm from "../../../components/EditTopicForm";
+import Link from "next/link";
 
 const getTopicById = async (id) => {
   try {
@@ -21,5 +22,18 @@ export default async function EditTopic({ params }) {
   const { topic } = await getTopicById(id);
   const { title, description } = topic;
 
-  return <EditTopicForm id={id} title={title} description={description} />;
+  return (
+  <div>
+    <nav className="flex justify-between items-center bg-slate-800 px-8 py-3">
+      <Link className="text-white font-bold" href={"/home"}>
+        Eliel Topic Archives.
+      </Link>
+      <Link className="bg-white p-2" href={"/addTopic"}>
+        Add Topic
+      </Link>
+    </nav><br></br>
+    <EditTopicForm id={id} title={title} description={description} />
+  </div>
+  );
+  
 }

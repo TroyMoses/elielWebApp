@@ -26,7 +26,7 @@ export default function EditTopicForm({ id, title, description }) {
       }
 
       router.refresh();
-      router.push("/");
+      router.push("/home");
     } catch (error) {
       console.log(error);
     }

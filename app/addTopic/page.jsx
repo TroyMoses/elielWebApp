@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function AddTopic() {
   const [title, setTitle] = useState("");
@@ -27,7 +28,7 @@ export default function AddTopic() {
       });
 
       if (res.ok) {
-        router.push("/");
+        router.push("/home");
       } else {
         throw new Error("Failed to create a topic");
       }
@@ -37,29 +38,39 @@ export default function AddTopic() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Title"
-      />
+    <div>
+        <nav className="flex justify-between items-center bg-slate-800 px-8 py-3">
+        <Link className="text-white font-bold" href={"/home"}>
+            Eliel Topic Archives.
+        </Link>
+        <Link className="bg-white p-2" href={"/addTopic"}>
+            Add Topic
+        </Link>
+        </nav><br></br>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <input
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            className="border border-slate-500 px-8 py-2"
+            type="text"
+            placeholder="Topic Title"
+        />
 
-      <input
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Description"
-      />
+        <input
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+            className="border border-slate-500 px-8 py-2"
+            type="text"
+            placeholder="Topic Description"
+        />
 
-      <button
-        type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
-      >
-        Add Topic
-      </button>
-    </form>
+        <button
+            type="submit"
+            className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        >
+            Add Topic
+        </button>
+        </form>
+    </div>
   );
 }
