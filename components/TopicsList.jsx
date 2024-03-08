@@ -4,10 +4,9 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    const apiUrl = process.env.NODE_ENV === 'production' ? '/api/topics' : 'http://localhost:3000/api/topics';
+    const apiUrl = 'http:/localhost:3000/api/topics'; // Use a relative path
 
     const res = await fetch(apiUrl, { cache: 'no-store' });
-
 
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
