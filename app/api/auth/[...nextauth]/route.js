@@ -2,7 +2,7 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
 import User from "../../../../models/user";
-import connectMongoDB from "../../../../libs/mongodb";
+import { connect } from "../../../../libs/mongodb";
 
 const handler = NextAuth({
     providers:[
@@ -17,7 +17,7 @@ const handler = NextAuth({
         },
         async signIn({account, profile, user, credentials}) {
             try {
-                await connectMongoDB()
+                await connect()
                 const checkEmail = await User.find({email: user.email})
 
                 if (checkEmail.length == 0) {
